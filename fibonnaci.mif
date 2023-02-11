@@ -1,0 +1,20 @@
+-- program memory file for fibonnaci.a
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+00 : 1111100000000010; -- move 0 into RC
+01 : 1111100000001001; -- move 1 into RB
+02 : 1111100001001011; -- move 9 into RD
+03 : 1111100000001100; -- move 1 into RE
+04 : 1111000100000000; -- move RB to RA
+05 : 1000010001000000; -- add RC RB store RA 
+06 : 1111000100000010; -- move RB to RC
+07 : 1111000000000001; -- move RA to RB
+08 : 1001011100000011; -- subtract RE from RD
+09 : 0011000000001011; -- conditional if zero reached break
+0A : 0010000000000101; -- if /= 0 go to line 5
+[0B..FF] : 001111000000000; --exit
+END

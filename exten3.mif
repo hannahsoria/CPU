@@ -1,0 +1,16 @@
+-- program memory file for exten3.a
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+00 : 1111100001111000; -- move 15 into RA
+01 : 1111100000101001; -- move 5 into RB
+02 : 1111100000001010; -- move 1 into RC
+03 : 0100010000000000; -- push RC into stack
+04 : 1001000001000000; -- RA - RB into RA
+05 : 0011000000000111; -- condition move on
+06 : 0010000000000011; -- unconditional line 3
+[07..FF] : 001111000000000; --exit
+END

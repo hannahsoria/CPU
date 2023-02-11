@@ -1,0 +1,17 @@
+-- program memory file for exten2.a
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+00 : 1111100000101000; -- move 5 into RA
+01 : 1111000000000011; -- move RA into RD
+02 : 1111100000011001; -- move 3 into RB
+03 : 1111100000001010; -- move 1 into RC
+04 : 1000000011000011; -- RA + RD into RD
+05 : 1001001010000001; -- RB - RC into RB
+06 : 0011000000001000; -- condition move on
+07 : 0010000000000100; -- unconditional line 4
+[08..FF] : 001111000000000; --exit
+END

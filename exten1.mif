@@ -1,0 +1,24 @@
+-- program memory file for exten1.a
+DEPTH = 256;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = BIN;
+CONTENT
+BEGIN
+00 : 1111100001111000; -- move 1111 into RA 
+01 : 1101100000000001; -- shift RA right into RB 
+02 : 1101100100000010; -- shift RB right into RC 
+03 : 1101101000000011; -- shift RC right into RD 
+04 : 0100000000000000; -- push RA to stack 
+05 : 0100001000000000; -- push RB to stack
+06 : 0100010000000000; -- push RC to stack
+07 : 0100011000000000; -- push RD to stack
+08 : 1111100000100000; -- move 4 into RA
+09 : 1111100000001001; -- move 1 into RB
+0A : 0101100000000000; -- pop SP to RE 
+0B : 1000100011000011; -- RE + RD saved to RD 
+0C : 1001000001000000; -- subtract RB from RA
+0D : 0011000000001111; -- conditional  
+0E : 0010000000001010; -- unconditional go to line 8
+[0F..FF] : 001111000000000; --exit
+END
